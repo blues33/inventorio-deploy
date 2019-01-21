@@ -7,8 +7,8 @@
     "url": "git://github.com/react-boilerplate/react-boilerplate.git"
   },
   "engines": {
-    "npm": ">=5",
-    "node": ">=8.10.0"
+    "npm": "5.x",
+    "node": "8.x"
   },
   "author": "Max Stoiber",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "clean": "shjs ./internals/scripts/clean.js",
     "clean:all": "npm run analyze:clean && npm run test:clean && npm run build:clean",
     "generate": "plop --plopfile internals/generators/index.js",
-    "heroku-postbuild": "webpack -p",
+    "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress",
     "lint": "npm run lint:js",
     "lint:css": "stylelint './app/**/*.js'",
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",

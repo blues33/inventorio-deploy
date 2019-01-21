@@ -10,6 +10,8 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 import FacebookLogin from 'react-facebook-login';
+import { Button } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css';
 import injectReducer from 'utils/injectReducer';
 import makeSelectLandingPage from './selectors';
 import { setUsername } from './actions';
@@ -47,6 +49,13 @@ export class LandingPage extends React.Component {
               fields="name,email,picture"
               callback={this.props.responseFacebook}
             />
+            <div className="demo">
+              <Button
+                content="Demo"
+                size="huge"
+                onClick={() => alert('go to demo')}
+              />
+            </div>
           </div>
           <TopLeft />
           <TopRight />

@@ -62,7 +62,7 @@ app.use('/api/recipe', recipe);
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
-  outputPath: resolve(process.cwd(), 'build'),
+  outputPath: resolve(__dirname, 'build'),
   publicPath: '/',
 });
 

@@ -33,7 +33,7 @@ module.exports = {
       directory: path.join(__dirname, '/database/migrations'),
     },
     seeds: {
-      directory: path.join(__dirname, '/database/seeds/production'),
+      directory: path.join(__dirname, '/database/seeds'),
     },
     searchPath: ['knex', 'public'],
   },

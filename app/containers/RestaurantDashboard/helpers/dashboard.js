@@ -54,7 +54,7 @@ export function combineRevenueAndSales(costs, sales) {
     // if (!date[currentDate]) {
     //   date[currentDate] = {};
     // }
-    costs[currentDate][`${recipeName}_revenue`] = sale.sum;
+    costs['08/24/2018'][`${recipeName}_revenue`] = sale.sum;
   });
 
   //console.log('COSTS', costs);

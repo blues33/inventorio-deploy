@@ -4,13 +4,16 @@ require('dotenv').config();
 module.exports = {
   development: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    // connection: `${process.env.DATABASE_URL}?ssl=true`,
     // connection: {
     //   host: process.env.PG_HOST,
     //   user: process.env.PG_USER,
     //   password: process.env.PG_PASSWORD,
     //   database: process.env.PG_DATABASE,
     // },
+    connection: {
+      database: 'inventorio',
+    },
     migrations: {
       directory: path.join(__dirname, '/database/migrations'),
     },
@@ -22,7 +25,7 @@ module.exports = {
   // production will need some adjustment for deployment (process.env.DATABASE_URL)
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: `${process.env.DATABASE_URL}?ssl=true`,
     // connection: {
     //   host: process.env.PG_HOST,
     //   user: process.env.PG_USER,
@@ -33,7 +36,7 @@ module.exports = {
       directory: path.join(__dirname, '/database/migrations'),
     },
     seeds: {
-      directory: path.join(__dirname, '/database/seeds/production'),
+      directory: path.join(__dirname, '/database/seeds'),
     },
     searchPath: ['knex', 'public'],
   },
